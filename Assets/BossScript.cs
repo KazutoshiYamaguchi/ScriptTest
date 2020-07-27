@@ -5,33 +5,19 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
 
-
-
-
 	// Use this for initialization
 	void Start()
 	{
 
 		Boss magic = new Boss();
 
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();
-		magic.Magic();//11回目
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
+		for (int i = 0; i <= 11; i++)
+		{
+			magic.Magic();
+		}
 
 	}
+	
 
 
 	public class Boss
@@ -40,11 +26,11 @@ public class BossScript : MonoBehaviour
 
 		public void Magic()
 		{
-			mp -= 5;
+			
 
-			if (mp > 0)
+			if (mp > 4)
 			{
-
+				mp -= 5;
 				Debug.Log("魔法攻撃をした。残りMPは" + this.mp);
 			}
 			else
